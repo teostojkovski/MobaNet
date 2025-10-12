@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f0f2f5;
   --foreground: #171717;
 }
 
@@ -12,15 +12,29 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Force light theme - remove dark mode */
+html {
+  background: #f0f2f5 !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #f0f2f5 !important;
+  color: #171717 !important;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Override all Ant Design components to use light theme */
+.ant-layout {
+  background: #f0f2f5 !important;
+}
+
+.ant-layout-content {
+  background: #f0f2f5 !important;
+}
+
+.ant-layout-sider {
+  background: #001529 !important;
 }

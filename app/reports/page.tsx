@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-export default function Home() {
+export default function Reports() {
   return (
     <div style={{ padding: 24, background: "#eee", borderRadius: 8 }}>
-      <h1>Hello Dashboard</h1>
-      <p>This is content from /app/page.tsx</p>
+      <h1>Hello Reports</h1>
+      <p>Here are some reports.x</p>
     </div>
   );
 }
