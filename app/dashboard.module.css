@@ -1,0 +1,324 @@
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #f0f2f5;
+    border: 3px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardHeading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Benzin', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.mainCard {
+    width: 90%;
+    max-height: 300px;
+    border-radius: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 40px;
+}
+
+.balanceSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.incomeExpenseSection {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.income,
+.expenses {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.balanceSection h2 {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: left;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.income h2, .expenses h2 {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #666666;
+    text-align: left;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.balanceSection p {
+    font-size: 3.5rem;
+    color: #222;
+    margin: 0;
+    font-weight: 500;
+}
+
+.income p, .expenses p {
+    font-size: 2rem;
+    color: #222;
+    margin: 0;
+    font-weight: 500;
+}
+
+.buttonSection {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    margin-left: 50px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.addBalanceBtn, .addIncomeBtn, .addExpenseBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: none;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 250px;
+    height: 56px;
+    justify-content: center;
+}
+
+.addBalanceBtn {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.addBalanceBtn:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.addIncomeBtn, .addExpenseBtn {
+    background-color: #1f2937;
+    color: white;
+}
+
+.addIncomeBtn:hover, .addExpenseBtn:hover {
+    background-color: #111827;
+    transform: translateY(-2px);
+}
+
+.icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.savingSection {
+    width: 90%;
+    border-radius: 30px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 30px;
+    flex-shrink: 0;
+    max-height: 200px;
+    gap: 30px;
+}
+
+.savingContent {
+    flex: 1;
+    min-width: 70%;
+}
+
+.savingSection h2 {
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+    text-align: left;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.savingSection p {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 400;
+}
+
+.saveButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 140px;
+    height: 48px;
+    justify-content: center;
+    background-color: #1f2937;
+    color: white;
+    flex-shrink: 0;
+}
+
+.saveButton:hover {
+    background-color: #111827;
+    transform: translateY(-2px);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  width: 500px;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal h3 {
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.modalDescription {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  font-size: 1.1rem;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.confirmBtn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  flex: 1;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.confirmBtn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.cancelBtn {
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  flex: 1;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.cancelBtn:hover {
+  background-color: #4b5563;
+  transform: translateY(-1px);
+}

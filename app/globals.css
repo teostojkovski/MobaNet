@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Benzin';
+  src: url('/fonts/Benzin-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #f0f2f5;
   --foreground: #171717;
@@ -15,6 +22,8 @@
 /* Force light theme - remove dark mode */
 html {
   background: #f0f2f5 !important;
+  height: 100vh;
+  overflow: hidden;
 }
 
 body {
@@ -23,7 +32,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Override all Ant Design components to use light theme */

@@ -14,21 +14,22 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <Layout style={{ minHeight: "100vh", background: '#f0f2f5' }}>
+    <Layout style={{ height: "100vh", background: '#f0f2f5', overflow: 'hidden' }}>
       <SiderMenu onCollapse={setCollapsed} />
       <Layout style={{ 
         marginLeft: collapsed ? 80 : 200, 
         transition: 'margin-left 0.2s',
-        background: '#f0f2f5'
+        background: '#f0f2f5',
+        height: '100vh',
+        overflow: 'hidden'
       }}>
         <Content
           style={{
-            margin: "24px",
-            padding: 24,
-            minHeight: 280,
-            background: "#fff",
-            borderRadius: 8,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            margin: "0",
+            padding: "0",
+            height: "100vh",
+            background: "#f0f2f5",
+            overflow: 'hidden'
           }}
         >
           {children}
