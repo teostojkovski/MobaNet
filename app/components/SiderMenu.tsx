@@ -1,14 +1,15 @@
 "use client"; 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   HomeOutlined,
   BarChartOutlined,
   BankOutlined,
+  DollarOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import logoWhite from '../../public/logoWhite.png';
 import mWhite from '../../public/mWhite.png';
@@ -38,6 +39,12 @@ interface SiderMenuProps {
 const SiderMenu: React.FC<SiderMenuProps> = ({ onCollapse }) => {
   const [collapsed, setCollapsed] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+  const [selectedKeys, setSelectedKeys] = useState<string[]>(['/']);
+
+  useEffect(() => {
+    setSelectedKeys([pathname || '/']);
+  }, [pathname]);
 
   const handleCollapse = (value: boolean) => {
     setCollapsed(value);
@@ -45,9 +52,10 @@ const SiderMenu: React.FC<SiderMenuProps> = ({ onCollapse }) => {
   };
 
   const items: MenuItem[] = [
-    getItem('Dashboard', '/', <HomeOutlined />),
-    getItem('Transactions', '/transactions', <BankOutlined />),
-    getItem('Reports', '/reports', <BarChartOutlined />),
+    getItem('Dashboard', '/', <HomeOutlined style={{ fontSize: '16px' }} />),
+    getItem('Transactions', '/transactions', <BankOutlined style={{ fontSize: '16px' }} />),
+    getItem('Reports', '/reports', <BarChartOutlined style={{ fontSize: '16px' }} />),
+    getItem('Savings', '/savings', <DollarOutlined style={{ fontSize: '16px' }} />),
   ];
 
   const handleMenuClick = ({ key }: { key: string }) => {
@@ -81,7 +89,7 @@ const SiderMenu: React.FC<SiderMenuProps> = ({ onCollapse }) => {
       </div>
       <Menu 
         theme="dark" 
-        defaultSelectedKeys={['/']} 
+        selectedKeys={selectedKeys}
         mode="inline" 
         items={items}
         onClick={handleMenuClick}
